@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-  </head>
-  <body>
-    <header>
-      <h1>Password Generator</h1>
-    </header>
-    <h2>Generate a Password</h2>
-    <textarea
-      readonly
-      id="password"
-      placeholder="Your Secure Password"
-      aria-label="Generated Password"
-    ></textarea>
-    <button id="generate">Generate Password</button>
-    <button id="copy">
-      Copy to Clipboard
-    </button>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Password Generator</title>
+</head>
+
+<script>
+
+
+
+</script>
+
+
+
+
+<body class="bg-light m-3">
+  <header>
+    <div class="header text-center pt-3 m-3">
+      <h1><strong>Password Generator</strong></h1>
+    </div>
+  </header>
+
+  <div class="cotent">
+    <div class="row">
+      <div class="col main-content bg-white m-3">
+        <div class="title">
+          <h3 class="pt-5 pb-4 border-bottom">Generate a Password</h3>
+        </div>
+        <div class="text-box p-2 border-bottom rounded">
+          <textarea class="form-control col text-center bg-white" rows="5" readonly id="password"
+            placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+        </div>
+        <div class="row buttons text-center col m-3 pb-3">
+          <div class="col-sm-auto">
+            <button type="button" class="btn btn-danger px-4" id="generate" onclick="promptForNumber()">Generate
+              Password</button>
+          </div>
+          <div class="col"></div>
+          <div class="col-sm-auto">
+            <button type="button" class="btn btn-secondary disabled px-4" id="copy">
+              Copy to Clipboard
+          </div>
+        </div>
+      </div>
+      </button>
+    </div>
+  </div>
+</body>
+
 </html>

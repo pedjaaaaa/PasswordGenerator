@@ -1,0 +1,16 @@
+.content {
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+}
+
+.form-control {
+    border-width: 2px;
+    border-style: dashed;
+    letter-spacing: 3px;
+}
+
+.btn {
+    border-radius: 25px;
+    font-size: 25px;
+}
