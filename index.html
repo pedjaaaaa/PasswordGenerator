@@ -22,6 +22,14 @@
   var useNumChar = false;
   var number;
 
+  window.onload=function() {
+    document.getElementById("copy").disabled=true;
+  }
+
+  function afterClick() {
+    document.getElementById("copy").disabled=false;
+  }
+
   function promptForNumber(text) {
     if (text == null) {
       text = "Please enter a number from 8 to 128";
@@ -34,6 +42,7 @@
       confirm("Your password (" + number + ") matches requirements. Do you want to proceed?", "");
       promptCharSet();
       generate();
+      afterClick();
     } else if (isNaN(number)) {
       promptForNumber("It is not a number. Please enter a number from 8 to 128", "");
     } else {
@@ -74,7 +83,7 @@
 function copyPassword() {
   var copyText = document.getElementById("password");
   copyText.select();
-  copyText.setSelectionRange(0, 99999)
+  copyText.setSelectionRange(0, 128)
   document.execCommand("copy");
   alert("Copied the text:" + copyText.value);
 }
@@ -82,14 +91,6 @@ function copyPassword() {
 
 
 </script>
-
-
-
-
-
-
-
-
 
 <body class="bg-light m-3">
   <header>
@@ -114,7 +115,7 @@ function copyPassword() {
           </div>
           <div class="col"></div>
           <div class="col-sm-auto">
-            <button type="button" class="copy btn btn-secondary px-4" onclick="copyPassword()" id="copy">
+            <button id="copy" type="button" class="copy btn btn-secondary px-4" onclick="copyPassword()">
               Copy to Clipboard
           </div>
         </div>
