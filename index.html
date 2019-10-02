@@ -32,7 +32,7 @@
 
   function promptForNumber(text) {
     if (text == null) {
-      text = "Please enter a number from 8 to 128";
+      text = "Choose password character length. Pick a number from 8 to 128.";
     }
     number = parseInt(window.prompt(text, ''));
     checkNumber(number);
@@ -50,10 +50,10 @@
     }
   }
   function promptCharSet() {
-    useLowerCase = confirm("Use lowercase letters?");
+    useLowerCase = confirm("Use Lowercase letters?");
     useUpperCase = confirm("Use Uppercase letters?");
     useSepcialChar = confirm("Use Special characters?");
-    useNumChar = confirm("Use Numberic characters?");
+    useNumChar = confirm("Use Numeric characters?");
   }
   function generate() {
     console.log("This ran")
