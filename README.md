@@ -1,5 +1,5 @@
 # PasswordGenerator
-## Generate a random password using characters of your choice.
+## Generate a random password using characters of your choice
 ![Example1](https://raw.githubusercontent.com/pedjaaaaa/PasswordGenerator/master/READMEimages/Screen%20Shot%202019-10-02--01.png)
 App launches with a  red Generate Password button.
 ![Example Images](https://raw.githubusercontent.com/pedjaaaaa/PasswordGenerator/master/READMEimages/Screen%20Shot%202019-10-02-03.png)
