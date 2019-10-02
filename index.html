@@ -22,12 +22,12 @@
   var useNumChar = false;
   var number;
 
-  window.onload=function() {
-    document.getElementById("copy").disabled=true;
+  window.onload = function () {
+    document.getElementById("copy").disabled = true;
   }
 
   function afterClick() {
-    document.getElementById("copy").disabled=false;
+    document.getElementById("copy").disabled = false;
   }
 
   function promptForNumber(text) {
@@ -80,16 +80,13 @@
     document.getElementById("password").value = userPassword;
   }
 
-function copyPassword() {
-  var copyText = document.getElementById("password");
-  copyText.select();
-  copyText.setSelectionRange(0, 128)
-  document.execCommand("copy");
-  alert("Copied the text:" + copyText.value);
-}
-
-
-
+  function copyPassword() {
+    var copyText = document.getElementById("password");
+    copyText.select();
+    copyText.setSelectionRange(0, 128)
+    document.execCommand("copy");
+    alert("Copied the text:" + copyText.value);
+  }
 </script>
 
 <body class="bg-light m-3">
@@ -98,10 +95,10 @@ function copyPassword() {
       <h1><strong>Password Generator</strong></h1>
     </div>
   </header>
-  <div class="cotent">
+  <div class="container">
     <div class="row">
       <div class="col main-content bg-white m-3">
-        <div class="title">
+        <div class="container title">
           <h3 class="pt-5 pb-4 border-bottom">Generate a Password</h3>
         </div>
         <div class="text-box p-2 border-bottom rounded">
@@ -124,4 +121,5 @@ function copyPassword() {
     </div>
   </div>
 </body>
+
 </html>
