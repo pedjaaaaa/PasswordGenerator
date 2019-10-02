@@ -12,11 +12,66 @@
 </head>
 
 <script>
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var sepcialChar = " !@#$%^&*()_+~`|}{[]:;?><,./-=";
+  var numChar = "0123456789";
+  var useLowerCase = false;
+  var useUpperCase = false;
+  var useSepcialChar = false;
+  var useNumChar = false;
+  var number;
 
+  function promptForNumber(text) {
+    if (text == null) {
+      text = "Please enter a number from 8 to 128";
+    }
+    number = parseInt(window.prompt(text, ''));
+    checkNumber(number);
+  }
+  function checkNumber(number) {
+    if (number <= 128 && number >= 8) {
+      confirm("Your password (" + number + ") matches requirements. Do you want to proceed?", "");
+      promptCharSet();
+      generate();
+    } else if (isNaN(number)) {
+      promptForNumber("It is not a number. Please enter a number from 8 to 128", "");
+    } else {
+      promptForNumber("Your number (" + number + ") is not between 8 and 128", "");
+    }
+  }
 
+  function promptCharSet() {
+    useLowerCase = confirm("Use lowercase letters?");
+    useUpperCase = confirm("Use Uppercase letters?");
+    useSepcialChar = confirm("Use Special characters?");
+    useNumChar = confirm("Use Numberic characters?");
+  }
 
+  function generate() {
+    console.log("This ran")
+    userPassword = "";
+    passwordCharSet = "";
+    if (useLowerCase === true) {
+      passwordCharSet += lowerCase;
+    }
+    if (useUpperCase === true) {
+      passwordCharSet += upperCase;
+    }
+    if (useNumChar === true) {
+      passwordCharSet += numChar;
+    }
+    if (useSepcialChar === true) {
+      passwordCharSet += sepcialChar;
+    }
+    console.log(passwordCharSet)
+    for (let i = 0; i < number; i++) {
+      userPassword += passwordCharSet.charAt(
+        Math.floor(Math.random() * passwordCharSet.length)
+      );
+    } console.log(userPassword);
+  }
 </script>
-
 
 
 
@@ -44,7 +99,7 @@
           </div>
           <div class="col"></div>
           <div class="col-sm-auto">
-            <button type="button" class="btn btn-secondary disabled px-4" id="copy">
+            <button type="button" class="copy btn btn-secondary disabled px-4" id="copy">
               Copy to Clipboard
           </div>
         </div>
