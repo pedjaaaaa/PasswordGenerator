@@ -40,14 +40,12 @@
       promptForNumber("Your number (" + number + ") is not between 8 and 128", "");
     }
   }
-
   function promptCharSet() {
     useLowerCase = confirm("Use lowercase letters?");
     useUpperCase = confirm("Use Uppercase letters?");
     useSepcialChar = confirm("Use Special characters?");
     useNumChar = confirm("Use Numberic characters?");
   }
-
   function generate() {
     console.log("This ran")
     userPassword = "";
@@ -70,8 +68,26 @@
         Math.floor(Math.random() * passwordCharSet.length)
       );
     } console.log(userPassword);
+    document.getElementById("password").value = userPassword;
   }
+
+function copyPassword() {
+  var copyText = document.getElementById("password");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the text:" + copyText.value);
+}
+
+
+
 </script>
+
+
+
+
+
+
 
 
 
@@ -81,7 +97,6 @@
       <h1><strong>Password Generator</strong></h1>
     </div>
   </header>
-
   <div class="cotent">
     <div class="row">
       <div class="col main-content bg-white m-3">
@@ -99,7 +114,7 @@
           </div>
           <div class="col"></div>
           <div class="col-sm-auto">
-            <button type="button" class="copy btn btn-secondary disabled px-4" id="copy">
+            <button type="button" class="copy btn btn-secondary px-4" onclick="copyPassword()" id="copy">
               Copy to Clipboard
           </div>
         </div>
@@ -108,5 +123,4 @@
     </div>
   </div>
 </body>
-
 </html>
